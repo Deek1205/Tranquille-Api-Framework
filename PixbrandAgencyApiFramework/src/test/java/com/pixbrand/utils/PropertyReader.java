@@ -13,13 +13,13 @@ public class PropertyReader {
 	static {
 		try {
 
-			envProperties.load(new FileInputStream(System.getProperty("user.dir")
-					+ "//src//test//java//com//pixbrand//config//env.properties"));
-			configProperties.load(new FileInputStream(
-					System.getProperty("user.dir") + "//src//test//java//com//pixbrand//config//"
+			envProperties.load(new FileInputStream(
+					System.getProperty("user.dir") + "//src//test//java//com//pixbrand//config//env.properties"));
+			configProperties.load(
+					new FileInputStream(System.getProperty("user.dir") + "//src//test//java//com//pixbrand//config//"
 							+ envProperties.getProperty("env") + "-config.properties"));
-			dataProperties.load(new FileInputStream(
-					System.getProperty("user.dir") + "//src//test//java//com//pixbrand//config//"
+			dataProperties.load(
+					new FileInputStream(System.getProperty("user.dir") + "//src//test//java//com//pixbrand//config//"
 							+ envProperties.getProperty("env") + "-data.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();

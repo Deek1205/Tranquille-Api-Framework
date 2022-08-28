@@ -14,10 +14,8 @@ import com.pixbrand.report.Extent;
 import com.pixbrand.report.ExtentManager;
 import com.pixbrand.utils.PropertyReader;
 
-
 public class TranquilleBase {
 
-	
 	@BeforeMethod
 	public void setUpReport(Method method) {
 
@@ -33,15 +31,14 @@ public class TranquilleBase {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			try {
 
-				
 				// To add it in the extent report
 
 				Extent.getTest().log(Status.FAIL, "Test Case Failed is " + result.getName());
-				//Extent.getTest()
-						//.fail("Captured Screenshot is below:" + Extent.getTest().addScreenCaptureFromPath(baseUrl));
-				Extent.getTest().log( Status.FAIL, "Throw Exception" +result.getThrowable());
+				// Extent.getTest()
+				// .fail("Captured Screenshot is below:" +
+				// Extent.getTest().addScreenCaptureFromPath(baseUrl));
+				Extent.getTest().log(Status.FAIL, "Throw Exception" + result.getThrowable());
 				Extent.getTest().log(Status.FAIL, result.getStatus() + "-> Status Code Is");
-				
 
 			} catch (Exception e) {
 
@@ -55,7 +52,7 @@ public class TranquilleBase {
 			Extent.getTest().log(Status.SKIP, "Test Case Skipped is " + result.getName());
 
 		} else {
-			
+
 			Extent.getTest().log(Status.INFO, " Class Name Is--->    TranquilleTestcases");
 			Extent.getTest().log(Status.PASS, "Status Code = " + 200);
 			Extent.getTest().log(Status.PASS, result.getName() + " ->Test Case Passed ");

@@ -20,7 +20,7 @@ public final class ExtentManager {
 	public synchronized static ExtentReports getExtentReportsInstance() {
 		if (reports == null) {
 			htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\PixbrandApi.html");
-			htmlReporter.config().setReportName("Pixbrand"); 
+			htmlReporter.config().setReportName("Pixbrand");
 			htmlReporter.config().setDocumentTitle("Pixbrand Api Test Report ");
 			htmlReporter.config().setTheme(Theme.DARK);
 			reports = new ExtentReports();
